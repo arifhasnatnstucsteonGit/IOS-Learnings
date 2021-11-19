@@ -17,6 +17,7 @@
 		4FA3E56C274746B60043F625 /* IOS_LearningsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA3E56B274746B60043F625 /* IOS_LearningsTests.swift */; };
 		4FA3E576274746B60043F625 /* IOS_LearningsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA3E575274746B60043F625 /* IOS_LearningsUITests.swift */; };
 		4FA3E578274746B60043F625 /* IOS_LearningsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA3E577274746B60043F625 /* IOS_LearningsUITestsLaunchTests.swift */; };
+		4FA3E58627476A980043F625 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA3E58527476A980043F625 /* TableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		4FA3E571274746B60043F625 /* IOS LearningsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "IOS LearningsUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FA3E575274746B60043F625 /* IOS_LearningsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOS_LearningsUITests.swift; sourceTree = "<group>"; };
 		4FA3E577274746B60043F625 /* IOS_LearningsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOS_LearningsUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		4FA3E58527476A980043F625 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 		4FA3E550274746B50043F625 /* IOS Learnings */ = {
 			isa = PBXGroup;
 			children = (
+				4FA3E584274768600043F625 /* tableView */,
 				4FA3E551274746B50043F625 /* AppDelegate.swift */,
 				4FA3E553274746B50043F625 /* SceneDelegate.swift */,
 				4FA3E555274746B50043F625 /* ViewController.swift */,
@@ -128,6 +131,14 @@
 				4FA3E577274746B60043F625 /* IOS_LearningsUITestsLaunchTests.swift */,
 			);
 			path = "IOS LearningsUITests";
+			sourceTree = "<group>";
+		};
+		4FA3E584274768600043F625 /* tableView */ = {
+			isa = PBXGroup;
+			children = (
+				4FA3E58527476A980043F625 /* TableViewController.swift */,
+			);
+			path = tableView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -264,6 +275,7 @@
 				4FA3E556274746B50043F625 /* ViewController.swift in Sources */,
 				4FA3E552274746B50043F625 /* AppDelegate.swift in Sources */,
 				4FA3E554274746B50043F625 /* SceneDelegate.swift in Sources */,
+				4FA3E58627476A980043F625 /* TableViewController.swift in Sources */,
 				4FA3E55C274746B50043F625 /* IOS_Learnings.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
