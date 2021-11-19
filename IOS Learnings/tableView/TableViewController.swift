@@ -45,11 +45,9 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
             let cell = UITableViewCell()
             cell.textLabel?.text = "An image,label, and stepper"
             let stepper = UIStepper()
-            //stepper.wraps = true
             cell.accessoryView = stepper
             stepper.wraps = true
-            //stepper.layer.borderColor = UIColor.blue.cgColor
-            //stepper.layer.borderWidth = 1
+         
             
             cell.imageView?.image = UIImage(named: "pic")
             circularImage(cell: cell)
@@ -72,7 +70,7 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
             label.text = "the value"
             
             cell.accessoryView = label
-            // self.view.addSubview(label)
+         
             
           
             cell.imageView?.image = UIImage(named: "pic")
@@ -86,19 +84,16 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
             
         }else if (indexPath.row == 3){
             let cell = tableView.dequeueReusableCell(withIdentifier: "cell") ?? UITableViewCell(style: .subtitle, reuseIdentifier: "cell")
-           // cell.detailTextLabel?.text = "value2 style"
+          
             cell.textLabel?.text = "value2 style"
             cell.textLabel?.textColor = UIColor.tintColor
-           // cell.textLabel?.textAlignment =
-            //cell.detailTextLabel?.text
+           
             cell.imageView?.image = UIImage(named: "pic")
             circularImage(cell: cell)
             cell.imageView?.isHidden = true
             
             
             let label = UILabel(frame: CGRect(x: 0, y: 0, width: 235, height: 50))
-            //label.center = CGPoint(x: 0, y: 0)
-            
             label.textAlignment = .left
             label.numberOfLines = 0
             label.textColor = UIColor.black
@@ -117,12 +112,7 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
             cell.textLabel?.textAlignment = .center
             cell.textLabel?.textColor = UIColor.tintColor
             
-            
-            //cell.textLabel?.text = "This style looks a bit antiquated"
-            
             let label = UILabel(frame: CGRect(x: 0, y: 0, width: 265, height: 20))
-            //label.center = CGPoint(x: 0, y: 0)
-            
             label.textAlignment = .left
             label.numberOfLines = 0
             label.textColor = UIColor.black
@@ -137,13 +127,10 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }else if(indexPath.row == 5){
             
             let cell = tableView.dequeueReusableCell(withIdentifier: "cell") ?? UITableViewCell(style: .subtitle, reuseIdentifier: "cell")
-            //let cell = tableView.dequeueReusableCell(withIdentifier: "basicStyle", for: indexPath)
             cell.textLabel?.text = "The most useful style is the subtitle style."
             cell.detailTextLabel?.text = "This is the subtitle.This cell has a Button"
             cell.imageView?.image = UIImage(named: "pic")
             circularImage(cell: cell)
-            
-
             
             let button : UIButton = UIButton(type:UIButton.ButtonType.custom) as UIButton
             button.frame = CGRect(origin: CGPoint(x: 100,y :10), size: CGSize(width: 60, height: 24))
@@ -152,9 +139,7 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
 
 
             button.setTitleColor(.tintColor, for: .normal)
-            //button.addTarget(self, action: #selector(buttonClicked), for: UIControlEvents.touchUpInside)
             button.setTitle("Button", for: UIControl.State.normal)
-            //cell.addSubview(button)
             cell.accessoryView = button
             
             
@@ -172,20 +157,16 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
             cell.imageView?.image = UIImage(named: "pic")
             circularImage(cell: cell)
             
-
-            
             let items = ["Show", "Medium", "Fast"]
             let filtersSegment = UISegmentedControl(items: items)
             filtersSegment.frame = CGRect.init(x: 0, y: 0, width: 200, height: 24)
             filtersSegment.selectedSegmentIndex = 1
             filtersSegment.tintColor = UIColor.black
-            //filtersSegment.addTarget(self, action: #selector(self.filterApply), for: UIControlEvents.valueChanged)
-            //cell.addSubview(filtersSegment)
             cell.accessoryView = filtersSegment
 
             cell.textLabel?.numberOfLines = 0
             cell.detailTextLabel?.numberOfLines = 0
-            //cell.heightAnchor == 100
+         
             return cell
         }
         
