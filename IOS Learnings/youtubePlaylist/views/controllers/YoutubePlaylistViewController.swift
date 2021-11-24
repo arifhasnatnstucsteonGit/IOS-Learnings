@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class YoutubePlaylistViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource{
 
@@ -17,18 +18,17 @@ class YoutubePlaylistViewController: UIViewController,UICollectionViewDelegate,U
    
     override func viewDidLoad() {
         super.viewDidLoad()
-        DispatchQueue.main.async {
-            self.getYoutubePlaylistData()
-        }
-        
-
-        
+        getYoutubePlaylistData()
         
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! YoutubePlaylistCollectionViewCell
         //cell.videoPreview.image
+        let prevideoUrl = thumbnails[indexPath.row]
+        let url = URL(string: prevideoUrl)
+        // this downloads the image asynchronously if it's not cached yet
+        cell.videoPreview.kf.setImage(with: url)
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
