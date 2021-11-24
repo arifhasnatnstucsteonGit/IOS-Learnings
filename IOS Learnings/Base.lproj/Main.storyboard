@@ -157,6 +157,21 @@
             </objects>
             <point key="canvasLocation" x="3260.8695652173915" y="85.714285714285708"/>
         </scene>
+        <!--Youtube Player View Controller-->
+        <scene sceneID="DIq-ZS-iE1">
+            <objects>
+                <viewController restorationIdentifier="YoutubePlaylistViewController" storyboardIdentifier="YoutubePlaylistViewController" id="KJh-ch-29Z" customClass="YoutubePlayerViewController" customModule="IOS_Learnings" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="PHC-dw-d4v">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="Xkr-e7-uzt"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CQY-rA-gxi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4238" y="84"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="HMs-bG-yGc">
             <objects>

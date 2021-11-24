@@ -7,19 +7,31 @@
 
 import UIKit
 import Kingfisher
+import XCDYouTubeKit
+import AVKit
 
 class YoutubePlaylistViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource{
 
    
     var thumbnails = [String]()
-
+    var videoUrls = [String]()
+    fileprivate var sideSize: CGFloat!
+    
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var collectionViewFlowLayout: UICollectionViewFlowLayout!
    
     override func viewDidLoad() {
         super.viewDidLoad()
         getYoutubePlaylistData()
+        configureCollectionView()
         
+    }
+    
+    func configureCollectionView() {
+        sideSize = collectionView.bounds.width / 3
+        collectionViewFlowLayout.itemSize = CGSize(width: sideSize, height: sideSize)
+        collectionViewFlowLayout.minimumLineSpacing = 1
+        collectionViewFlowLayout.minimumInteritemSpacing = 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -34,6 +46,49 @@ class YoutubePlaylistViewController: UIViewController,UICollectionViewDelegate,U
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return thumbnails.count
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let previewdeoUrl:String = videoUrls[indexPath.row]
+        //let url = URL(string: prevideoUrl)
+        print(previewdeoUrl)
+        let fullUrl = "https://www.youtube.com/watch?v=" + previewdeoUrl
+        //playVideo(videoUrl: fullUrl)
+        print(fullUrl)
+        
+//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//        let secondViewController = storyboard.instantiateViewController(withIdentifier: "YoutubePlaylistViewController") as UIViewController
+//        navigationController?.pushViewController(secondViewController, animated: true)
+        
+//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//        let secondViewController = storyboard.instantiateViewController(withIdentifier: "YoutubePlaylistViewController") as! YoutubePlayerViewController
+//        navigationController?.pushViewController(secondViewController, animated: true)
+
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let secondViewController = storyboard.instantiateViewController(withIdentifier: "YoutubePlaylistViewController") as UIViewController
+        present(secondViewController, animated: true, completion: nil)
+//
+//        let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "YoutubePlaylistViewController") as? YoutubePlayerViewController
+//        self.navigationController?.pushViewController(vc!, animated: true)
+        
+    }
+    
+    func playVideo(videoUrl:String) {
+
+        let playerViewController = AVPlayerViewController()
+           self.present(playerViewController, animated: true, completion: nil)
+
+        
+
+        
+        XCDYouTubeClient.default().getVideoWithIdentifier(videoUrl) { (video: XCDYouTubeVideo?, error: Error?) in
+            if let streamURL = video?.streamURLs[XCDYouTubeVideoQuality.small240.rawValue] {
+                    playerViewController.player = AVPlayer(url: streamURL)
+                } else {
+                    self.dismiss(animated: true, completion: nil)
+                }
+            }
+        }
     
 
     
@@ -58,6 +113,7 @@ class YoutubePlaylistViewController: UIViewController,UICollectionViewDelegate,U
                 
                 for item in items{
                     self.thumbnails.append((item.snippet?.thumbnails?.standard?.url!)!)
+                    self.videoUrls.append((item.snippet?.resourceId?.videoId!)!)
                 }
                 print(self.thumbnails)
                 

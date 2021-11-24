@@ -5,6 +5,8 @@ target 'IOS Learnings' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
   pod 'Kingfisher', '~> 7.0'
+  pod 'XCDYouTubeKit'
+  pod 'YoutubeKit'
 
   # Pods for IOS Learnings
 
