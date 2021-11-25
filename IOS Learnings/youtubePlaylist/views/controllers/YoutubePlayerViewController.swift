@@ -19,25 +19,20 @@ class YoutubePlayerViewController: UIViewController {
                 player = YTSwiftyPlayer(
                             frame: CGRect(x: 0, y: 0, width: 640, height: 480),
                             playerVars: [.videoID(videoID)])
-
-                // Enable auto playback when video is loaded
                 player.autoplay = true
                 view = player
                 player.loadPlayer()
                 
-                // Set player view.
-               // view = player
-               
+             
 
                 // Set delegate for detect callback information from the player.
                 //player.delegate = self
-                
-                // Load the video.
-                //player.loadPlayer()
+            
 
-        // Do any additional setup after loading the view.
-        //playVideo()
     }
+    
+    
+    
     
 //    func playVideo() {
 //
