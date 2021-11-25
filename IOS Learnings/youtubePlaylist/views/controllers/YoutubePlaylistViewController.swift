@@ -65,7 +65,8 @@ class YoutubePlaylistViewController: UIViewController,UICollectionViewDelegate,U
 
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let secondViewController = storyboard.instantiateViewController(withIdentifier: "YoutubePlaylistViewController") as UIViewController
+        let secondViewController = storyboard.instantiateViewController(withIdentifier: "YoutubePlaylistViewController") as! YoutubePlayerViewController
+        secondViewController.videoID = previewdeoUrl
         present(secondViewController, animated: true, completion: nil)
 //
 //        let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "YoutubePlaylistViewController") as? YoutubePlayerViewController
@@ -97,7 +98,7 @@ class YoutubePlaylistViewController: UIViewController,UICollectionViewDelegate,U
         urlComponent.queryItems = [
             URLQueryItem(name: "part", value: "snippet"),
             URLQueryItem(name: "maxResults", value: "25"),
-            URLQueryItem(name: "playlistId", value: "PLs6YIr-PdysBBJKQEKd1FSMFF3_g6_ien"),
+            URLQueryItem(name: "playlistId", value: "PL5PR3UyfTWvfacnfUsvNcxIiKIgidNRoW"),
             URLQueryItem(name: "pageToken", value: ""),
             URLQueryItem(name: "key", value: "AIzaSyBbx1tWZ_j17HBq7y84NF_B_QQQGxNSz5o")
         ]
@@ -112,7 +113,7 @@ class YoutubePlaylistViewController: UIViewController,UICollectionViewDelegate,U
                 items = responseModel.items!
                 
                 for item in items{
-                    self.thumbnails.append((item.snippet?.thumbnails?.standard?.url!)!)
+                    self.thumbnails.append((item.snippet?.thumbnails?.high?.url!)!)
                     self.videoUrls.append((item.snippet?.resourceId?.videoId!)!)
                 }
                 print(self.thumbnails)
