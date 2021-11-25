@@ -16,14 +16,16 @@ class YoutubePlaylistViewController: UIViewController,UICollectionViewDelegate,U
     var thumbnails = [String]()
     var videoUrls = [String]()
     fileprivate var sideSize: CGFloat!
-    
+ 
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var collectionViewFlowLayout: UICollectionViewFlowLayout!
    
     override func viewDidLoad() {
         super.viewDidLoad()
+        collectionView.delegate = self
+        collectionView.dataSource = self
         getYoutubePlaylistData()
-        configureCollectionView()
+       configureCollectionView()
         
     }
     
@@ -36,10 +38,8 @@ class YoutubePlaylistViewController: UIViewController,UICollectionViewDelegate,U
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! YoutubePlaylistCollectionViewCell
-        //cell.videoPreview.image
         let prevideoUrl = thumbnails[indexPath.row]
         let url = URL(string: prevideoUrl)
-        // this downloads the image asynchronously if it's not cached yet
         cell.videoPreview.kf.setImage(with: url)
         return cell
     }
@@ -47,31 +47,16 @@ class YoutubePlaylistViewController: UIViewController,UICollectionViewDelegate,U
         return thumbnails.count
     }
     
+
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let previewdeoUrl:String = videoUrls[indexPath.row]
-        //let url = URL(string: prevideoUrl)
-        print(previewdeoUrl)
-        let fullUrl = "https://www.youtube.com/watch?v=" + previewdeoUrl
-        //playVideo(videoUrl: fullUrl)
-        print(fullUrl)
-        
-//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//        let secondViewController = storyboard.instantiateViewController(withIdentifier: "YoutubePlaylistViewController") as UIViewController
-//        navigationController?.pushViewController(secondViewController, animated: true)
-        
-//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//        let secondViewController = storyboard.instantiateViewController(withIdentifier: "YoutubePlaylistViewController") as! YoutubePlayerViewController
-//        navigationController?.pushViewController(secondViewController, animated: true)
-
-        
+    
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let secondViewController = storyboard.instantiateViewController(withIdentifier: "YoutubePlaylistViewController") as! YoutubePlayerViewController
         secondViewController.videoID = previewdeoUrl
         present(secondViewController, animated: true, completion: nil)
-//
-//        let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "YoutubePlaylistViewController") as? YoutubePlayerViewController
-//        self.navigationController?.pushViewController(vc!, animated: true)
-        
+
     }
     
     func playVideo(videoUrl:String) {
@@ -107,8 +92,6 @@ class YoutubePlaylistViewController: UIViewController,UICollectionViewDelegate,U
             do {
                 let jsonDecoder = JSONDecoder()
                 let responseModel = try jsonDecoder.decode(YoutubePlaylistModel.self, from: data!)
-                //print(responseModel.items![0].snippet?.resourceId?.videoId)
-               // print(responseModel.items![0].snippet?.thumbnails?.standard?.url)
                 var items = [Items]()
                 items = responseModel.items!
                 
@@ -122,8 +105,6 @@ class YoutubePlaylistViewController: UIViewController,UICollectionViewDelegate,U
                     self.collectionView.reloadData()
                 }
               
-                
-                //self.thumbnails.append((responseModel.items![0].snippet?.thumbnails?.standard?.url!)!)
             } catch {
                 print("JSON Serialization error")
             }

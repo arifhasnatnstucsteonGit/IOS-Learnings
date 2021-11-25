@@ -19,9 +19,16 @@ class YoutubePlayerViewController: UIViewController {
                 player = YTSwiftyPlayer(
                             frame: CGRect(x: 0, y: 0, width: 640, height: 480),
                             playerVars: [.videoID(videoID)])
+        
+        // for live videos just paste the live link. it will work as like offline youtube videos
+        
+//                player = YTSwiftyPlayer(
+//                    frame: CGRect(x: 0, y: 0, width: 640, height: 480),
+//                    playerVars: [.videoID("YBnOCDVpEfg")])
                 player.autoplay = true
                 view = player
                 player.loadPlayer()
+ 
                 
              
 
