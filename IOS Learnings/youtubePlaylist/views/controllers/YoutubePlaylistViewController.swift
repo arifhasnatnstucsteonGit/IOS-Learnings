@@ -25,7 +25,7 @@ class YoutubePlaylistViewController: UIViewController,UICollectionViewDelegate,U
         collectionView.delegate = self
         collectionView.dataSource = self
         getYoutubePlaylistData()
-       configureCollectionView()
+        configureCollectionView()
         
     }
     
@@ -79,21 +79,27 @@ class YoutubePlaylistViewController: UIViewController,UICollectionViewDelegate,U
 
     
     func getYoutubePlaylistData(){
-        let urlComponent = NSURLComponents(string: "https://www.googleapis.com/youtube/v3/playlistItems")!
-        urlComponent.queryItems = [
-            URLQueryItem(name: "part", value: "snippet"),
-            URLQueryItem(name: "maxResults", value: "25"),
-            URLQueryItem(name: "playlistId", value: "PL5PR3UyfTWvfacnfUsvNcxIiKIgidNRoW"),
-            URLQueryItem(name: "pageToken", value: ""),
-            URLQueryItem(name: "key", value: "AIzaSyBbx1tWZ_j17HBq7y84NF_B_QQQGxNSz5o")
-        ]
+        let url = "https://www.googleapis.com/youtube/v3/playlistItems"
+        if  let urlComponent = NSURLComponents(string: url),let actualUrl = urlComponent.url {
+            
+            urlComponent.queryItems = [
+                URLQueryItem(name: "part", value: "snippet"),
+                URLQueryItem(name: "maxResults", value: "25"),
+                URLQueryItem(name: "playlistId", value: "PL5PR3UyfTWvfacnfUsvNcxIiKIgidNRoW"),
+                URLQueryItem(name: "pageToken", value: ""),
+                URLQueryItem(name: "key", value: "AIzaSyBbx1tWZ_j17HBq7y84NF_B_QQQGxNSz5o")
+            ]
         
-        URLSession.shared.dataTask(with: urlComponent.url!, completionHandler: { data, response, error -> Void in
+       
+        
+        URLSession.shared.dataTask(with: actualUrl, completionHandler: { data, response, error -> Void in
             do {
                 let jsonDecoder = JSONDecoder()
                 let responseModel = try jsonDecoder.decode(YoutubePlaylistModel.self, from: data!)
-                var items = [Items]()
-                items = responseModel.items!
+                //var items = [Items]()
+                guard let items = responseModel.items else {
+                    return
+                }
                 
                 for item in items{
                     self.thumbnails.append((item.snippet?.thumbnails?.high?.url!)!)
@@ -109,6 +115,8 @@ class YoutubePlaylistViewController: UIViewController,UICollectionViewDelegate,U
                 print("JSON Serialization error")
             }
         }).resume()
+            
+        }
     }
     
 }
