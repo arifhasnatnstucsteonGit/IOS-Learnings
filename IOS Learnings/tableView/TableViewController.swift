@@ -12,24 +12,40 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
 
     @IBOutlet weak var tableView: UITableView!
+    let mySwitchOne = UISwitch()
+    var mySwitchOneIsOn:Bool =  false
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         tableView.delegate = self
         tableView.dataSource = self
-        
+        mySwitchOne.addTarget(self, action:#selector(TableViewController.mySwitchOneValueChanged(_:)), for: .valueChanged)
         
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    @objc func mySwitchOneValueChanged(_ sender : UISwitch!){
 
+        if sender.isOn {
+            mySwitchOneIsOn =  true
+
+        } else {
+
+            mySwitchOneIsOn =  false
+        }
+
+
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+      
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         
         if (indexPath.row == 0){
-            let cell = UITableViewCell()
-            cell.textLabel?.text = "An image,label, and switch"
-            let mySwitch = UISwitch()
-            cell.accessoryView = mySwitch
+           // let cell = UITableViewCell()
+            cell.textLabel?.text = "An image,label, and switch data"
+           // let mySwitch = UISwitch()
+            cell.accessoryView = mySwitchOne
           
             cell.imageView?.image = UIImage(named: "pic")
             circularImage(cell: cell)
@@ -42,7 +58,7 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }else if(indexPath.row == 1){
             
     
-            let cell = UITableViewCell()
+            //let cell = UITableViewCell()
             cell.textLabel?.text = "An image,label, and stepper"
             let stepper = UIStepper()
             cell.accessoryView = stepper
@@ -60,7 +76,7 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
             return cell
             
         }else if(indexPath.row == 2){
-            let cell = UITableViewCell (style: UITableViewCell.CellStyle.value1, reuseIdentifier: "cell")
+           // let cell = UITableViewCell (style: UITableViewCell.CellStyle.value1, reuseIdentifier: "cell")
             cell.textLabel?.text = "value 1 style"
             
             let label = UILabel(frame: CGRect(x: 0, y: 0, width: 100, height: 24))
@@ -83,7 +99,7 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
             return cell
             
         }else if (indexPath.row == 3){
-            let cell = tableView.dequeueReusableCell(withIdentifier: "cell") ?? UITableViewCell(style: .subtitle, reuseIdentifier: "cell")
+//            let cell = tableView.dequeueReusableCell(withIdentifier: "cell") ?? UITableViewCell(style: .subtitle, reuseIdentifier: "cell")
           
             cell.textLabel?.text = "value2 style"
             cell.textLabel?.textColor = UIColor.tintColor
@@ -107,7 +123,7 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
             return cell
             
         }else if(indexPath.row == 4){
-            let cell = tableView.dequeueReusableCell(withIdentifier: "cell") ?? UITableViewCell(style: .subtitle, reuseIdentifier: "cell")
+//            let cell = tableView.dequeueReusableCell(withIdentifier: "cell") ?? UITableViewCell(style: .subtitle, reuseIdentifier: "cell")
             cell.textLabel?.text = "This Style"
             cell.textLabel?.textAlignment = .center
             cell.textLabel?.textColor = UIColor.tintColor
@@ -126,7 +142,7 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
             
         }else if(indexPath.row == 5){
             
-            let cell = tableView.dequeueReusableCell(withIdentifier: "cell") ?? UITableViewCell(style: .subtitle, reuseIdentifier: "cell")
+//            let cell = tableView.dequeueReusableCell(withIdentifier: "cell") ?? UITableViewCell(style: .subtitle, reuseIdentifier: "cell")
             cell.textLabel?.text = "The most useful style is the subtitle style."
             cell.detailTextLabel?.text = "This is the subtitle.This cell has a Button"
             cell.imageView?.image = UIImage(named: "pic")
@@ -151,7 +167,7 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
             
         }else if(indexPath.row == 6){
             
-            let cell = tableView.dequeueReusableCell(withIdentifier: "cell") ?? UITableViewCell(style: .subtitle, reuseIdentifier: "cell")
+//            let cell = tableView.dequeueReusableCell(withIdentifier: "cell") ?? UITableViewCell(style: .subtitle, reuseIdentifier: "cell")
             cell.textLabel?.text = "Segment Control"
             cell.detailTextLabel?.text = "This quite a big accessory view"
             cell.imageView?.image = UIImage(named: "pic")
@@ -168,15 +184,31 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
             cell.detailTextLabel?.numberOfLines = 0
          
             return cell
+        }else {
+            
+            //let cell = UITableViewCell()
+            cell.textLabel?.text = "An image,label, and switch"
+            let mySwitch = UISwitch()
+            cell.accessoryView = mySwitch
+          
+            cell.imageView?.image = UIImage(named: "pic")
+            circularImage(cell: cell)
+
+            
+            cell.textLabel?.numberOfLines = 0
+            cell.detailTextLabel?.numberOfLines = 0
+     
+            return cell
+            
         }
         
         
       
-           return UITableViewCell()
+           return cell
     }
    
       func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-          return 7
+          return 50
       }
     
     
