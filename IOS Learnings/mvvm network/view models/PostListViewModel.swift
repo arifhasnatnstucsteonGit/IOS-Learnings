@@ -17,9 +17,19 @@ class PostListViewModel {
 ////        }
 //    }
     
-    
-    func displayPostData(posts: [AllPost]){
-        self.posts = posts
+    init(webServices: WebService2, completion: @escaping() -> ()){
+        WebService2().loadPostData {posts in
+            self.posts = posts
+            DispatchQueue.main.async {
+                completion()
+            }
+          
+        }
     }
+    
+    
+//    func displayPostData(posts: [AllPost]){
+//        self.posts = posts
+//    }
 
 }
