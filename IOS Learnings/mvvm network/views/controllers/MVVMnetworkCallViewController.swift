@@ -31,7 +31,9 @@ class MVVMnetworkCallViewController: UIViewController , UITableViewDelegate , UI
         
        // self.postListViewModel = PostListViewModel()
         
-      
+      // data will load viewcotnroller through webservices and asigned data viewmodel. ViewControler will use the
+      // viewmodel data after that
+        
 //        WebService2().loadPostData {posts in
 //            self.postListViewModel.displayPostData(posts: posts)
 //            self.postTableView.reloadData()
@@ -39,7 +41,7 @@ class MVVMnetworkCallViewController: UIViewController , UITableViewDelegate , UI
         
        
         
-        
+        // data will load from viewcotnroller throught webservices
         self.postListViewModel = PostListViewModel(webServices: self.webService, completion: {
             self.postTableView.reloadData()
         })
