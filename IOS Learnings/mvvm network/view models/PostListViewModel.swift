@@ -17,15 +17,40 @@ class PostListViewModel {
 ////        }
 //    }
     
-    init(webServices: WebService2, completion: @escaping() -> ()){
+//    init(webServices: WebService2, completion: @escaping() -> ()){
+//        WebService2().loadPostData {posts in
+//            self.posts = posts
+//            DispatchQueue.main.async {
+//                completion()
+//            }
+//
+//        }
+//    }
+    
+    
+    init(completion: @escaping() -> ()){
         WebService2().loadPostData {posts in
             self.posts = posts
             DispatchQueue.main.async {
                 completion()
             }
-          
+
         }
     }
+    
+    
+//    init(){
+//        WebService2().loadPostData {posts in
+//
+//            DispatchQueue.main.async {
+//                self.posts = posts
+//            }
+////            DispatchQueue.main.async {
+////                completion()
+////            }
+//
+//        }
+//    }
     
     
 //    func displayPostData(posts: [AllPost]){

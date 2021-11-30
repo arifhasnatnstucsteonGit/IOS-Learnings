@@ -8,10 +8,9 @@
 import UIKit
 
 private var url =  URL(string: "http://arifhasnat.com/wp-json/wp/v2/posts")!
-typealias JSONDictionary = [String:Any]
-
 
 class WebService2 {
+    
     
     func loadPostData(completion: @escaping ([AllPost]) -> ()){
         URLSession.shared.dataTask(with: url) { data, _,_ in
