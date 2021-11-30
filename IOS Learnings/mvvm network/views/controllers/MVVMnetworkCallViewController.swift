@@ -9,14 +9,10 @@ import UIKit
 
 class MVVMnetworkCallViewController: UIViewController , UITableViewDelegate , UITableViewDataSource{
   
-    
-
     @IBOutlet weak var postTableView: UITableView!
-    
-    
     private var postListViewModel: PostListViewModel!
     private var webService: WebService2 = WebService2()
-   // var posts:[AllPost] = [AllPost]()
+
     
 
     override func viewDidLoad() {
@@ -28,43 +24,16 @@ class MVVMnetworkCallViewController: UIViewController , UITableViewDelegate , UI
         self.postTableView.rowHeight = UITableView.automaticDimension
         self.postTableView.separatorStyle = UITableViewCell.SeparatorStyle.none
        
-        
-       // self.postListViewModel = PostListViewModel()
-        
-      // data will load viewcotnroller through webservices and asigned data viewmodel. ViewControler will use the
-      // viewmodel data after that
-        
-//        WebService2().loadPostData {posts in
-//            self.postListViewModel.displayPostData(posts: posts)
-//            self.postTableView.reloadData()
-//        }
-        
-       
-        
-        // data will load from viewcotnroller throught webservices
-//        self.postListViewModel = PostListViewModel(webServices: self.webService, completion: {
-//            self.postTableView.reloadData()
-//        })
-        
-        
         self.postListViewModel = PostListViewModel(completion: {
                 self.postTableView.reloadData()
         })
         
-        
-//        self.postListViewModel = PostListViewModel({
-//                self.postTableView.reloadData()
-//            })
-//        self.postListViewModel = PostListViewModel()
-//        self.postTableView.reloadData()
-
-        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //return posts.count
+     
         return postListViewModel.posts.count
-        //return 0
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
