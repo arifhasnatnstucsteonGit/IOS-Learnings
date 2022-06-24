@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="j2W-Jg-i4b">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="KoK-A4-wI5">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
@@ -175,6 +175,48 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CQY-rA-gxi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4238" y="84"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="6wF-19-Au6">
+            <objects>
+                <viewController id="KoK-A4-wI5" customClass="ViewController" customModule="IOS_Learnings" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4Vm-wl-khg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vRj-9U-9NQ">
+                                <rect key="frame" x="184.5" y="432.5" width="45" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="GO"/>
+                                <connections>
+                                    <action selector="go:" destination="KoK-A4-wI5" eventType="touchUpInside" id="Hhh-4A-i9b"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IXM-FX-w3L" customClass="UIViewDemo" customModule="IOS_Learnings" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="334" height="896"/>
+                                <color key="backgroundColor" systemColor="systemTealColor"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="PIT-BW-SQM"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="IXM-FX-w3L" firstAttribute="top" secondItem="4Vm-wl-khg" secondAttribute="top" id="9fT-gE-sdN"/>
+                            <constraint firstItem="vRj-9U-9NQ" firstAttribute="centerY" secondItem="4Vm-wl-khg" secondAttribute="centerY" id="ET2-E0-lGc"/>
+                            <constraint firstItem="IXM-FX-w3L" firstAttribute="leading" secondItem="PIT-BW-SQM" secondAttribute="leading" id="V2m-ZE-RNW"/>
+                            <constraint firstItem="vRj-9U-9NQ" firstAttribute="centerX" secondItem="4Vm-wl-khg" secondAttribute="centerX" id="bjD-Lq-eS7"/>
+                            <constraint firstAttribute="bottom" secondItem="IXM-FX-w3L" secondAttribute="bottom" id="xgx-hN-tZf"/>
+                            <constraint firstItem="PIT-BW-SQM" firstAttribute="trailing" secondItem="IXM-FX-w3L" secondAttribute="trailing" constant="80" id="yil-kZ-kU1"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="IXM-FX-w3L"/>
+                            </mask>
+                        </variation>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="y8E-tX-U3E" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1668.1159420289857" y="85.714285714285708"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="HMs-bG-yGc">
@@ -497,6 +539,9 @@
         </systemColor>
         <systemColor name="systemGray4Color">
             <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

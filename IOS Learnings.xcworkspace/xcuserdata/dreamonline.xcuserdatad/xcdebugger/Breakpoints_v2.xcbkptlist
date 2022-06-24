@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "71BED178-16F8-42A9-9256-75CBA8F16AED"
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "24C2FB54-496A-43C5-8AB8-15BFE118DF86"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "IOS Learnings/youtubePlaylist/views/controllers/YoutubePlaylistViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "YoutubePlaylistViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "24C2FB54-496A-43C5-8AB8-15BFE118DF86 - 94a1a2077308763b"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "IOS_Learnings.YoutubePlaylistViewController.collectionView.getter : Swift.Optional&lt;__C.UICollectionView&gt;"
+                  moduleName = "IOS Learnings"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dreamonline/Documents/Projects/Practice/Basic/IOS%20Learnings/IOS%20Learnings/youtubePlaylist/views/controllers/YoutubePlaylistViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "85">
+               </Location>
+               <Location
+                  uuid = "24C2FB54-496A-43C5-8AB8-15BFE118DF86 - f39e6efb299e4a27"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "IOS_Learnings.YoutubePlaylistViewController.collectionView.setter : Swift.Optional&lt;__C.UICollectionView&gt;"
+                  moduleName = "IOS Learnings"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dreamonline/Documents/Projects/Practice/Basic/IOS%20Learnings/IOS%20Learnings/youtubePlaylist/views/controllers/YoutubePlaylistViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "136">
+               </Location>
+               <Location
+                  uuid = "24C2FB54-496A-43C5-8AB8-15BFE118DF86 - 31bc71841e0a9306"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "IOS_Learnings.YoutubePlaylistViewController.collectionView.modify : Swift.Optional&lt;__C.UICollectionView&gt;"
+                  moduleName = "IOS Learnings"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dreamonline/Documents/Projects/Practice/Basic/IOS%20Learnings/IOS%20Learnings/youtubePlaylist/views/controllers/YoutubePlaylistViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "52">
+               </Location>
+               <Location
+                  uuid = "24C2FB54-496A-43C5-8AB8-15BFE118DF86 - f4817933471c76c1"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "IOS_Learnings.YoutubePlaylistViewController.collectionView.modify : Swift.Optional&lt;__C.UICollectionView&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "IOS Learnings"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dreamonline/Documents/Projects/Practice/Basic/IOS%20Learnings/IOS%20Learnings/youtubePlaylist/views/controllers/YoutubePlaylistViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "26">
+               </Location>
+               <Location
+                  uuid = "24C2FB54-496A-43C5-8AB8-15BFE118DF86 - 38f7c2f5d4daa657"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "IOS_Learnings.YoutubePlaylistViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; IOS_Learnings.YoutubePlaylistViewController"
+                  moduleName = "IOS Learnings"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dreamonline/Documents/Projects/Practice/Basic/IOS%20Learnings/IOS%20Learnings/youtubePlaylist/views/controllers/YoutubePlaylistViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "182">
+               </Location>
+               <Location
+                  uuid = "24C2FB54-496A-43C5-8AB8-15BFE118DF86 - a881e1f1829135b7"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "IOS_Learnings.YoutubePlaylistViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;IOS_Learnings.YoutubePlaylistViewController&gt;"
+                  moduleName = "IOS Learnings"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dreamonline/Documents/Projects/Practice/Basic/IOS%20Learnings/IOS%20Learnings/youtubePlaylist/views/controllers/YoutubePlaylistViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "139">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
